@@ -33,7 +33,6 @@
                 @if (Auth:: user())
                 <li><a href="#">History</a></li>
                 @endif
-                <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
@@ -70,11 +69,16 @@
             <li>
                 <a href="#"> About <i class="fa fa-info" aria-hidden="true" style="margin-left:150px"></i></a>
             </li>
+            @if (Auth:: user())
             <li>
                 <a href="#"> Search History <i class="fa fa-file-text" aria-hidden="true" style="margin-left:80px"></i></a>
             </li>
+            @endif
             <li>
-                <a href="#"> Contact <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
+                <a href="{{url('/vehicles')}}"> Vehicles <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
+            </li>
+            <li>
+                <a href="#"> Routes <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
             </li>
         </ul>
     </div>

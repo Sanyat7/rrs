@@ -19,7 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
+//Vehicles
+Route::get('/vehicles',['uses' => 'VehiclesController@index', 'as' => 'vehiclePage']);
+Route::get('/vehicles/create',['uses' => 'VehiclesController@create', 'as' =>'createVehicle']);
+Route::post('/vehicles/store',['uses' => 'VehiclesController@store', 'as' =>'postCreateVehicle']);
+
 //navigation
 Route::get('/about','NavigationController@about');
 Route::get('/terms','NavigationController@terms');
-Route::get('/contact','NavigationController@contact');
