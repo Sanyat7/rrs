@@ -64,7 +64,7 @@
                 <hr width="70%" align="left" style="margin-left: 20px; border: 1px solid white">
             </li>
             <li style="margin-top: 50px" class="current">
-                <a href="index.html"> Map <i class="fa fa-map" aria-hidden="true" style="margin-left:150px"></i></a>
+                <a href="{{url('/')}}"> Map <i class="fa fa-map" aria-hidden="true" style="margin-left:150px"></i></a>
             </li>
             <li>
                 <a href="#"> About <i class="fa fa-info" aria-hidden="true" style="margin-left:150px"></i></a>
@@ -75,10 +75,10 @@
             </li>
             @endif
             <li>
-                <a href="{{url('/vehicles')}}"> Vehicles <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
+                <a href="{{route('vehiclePage')}}"> Vehicles <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
             </li>
             <li>
-                <a href="#"> Routes <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
+                <a href="{{route('routePage')}}"> Routes <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
             </li>
         </ul>
     </div>
