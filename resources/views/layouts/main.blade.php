@@ -28,7 +28,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Map <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Map <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">About</a></li>
                 @if (Auth:: user())
                 <li><a href="#">History</a></li>
@@ -63,7 +63,7 @@
                 </a>
                 <hr width="70%" align="left" style="margin-left: 20px; border: 1px solid white">
             </li>
-            <li style="margin-top: 50px" class="current">
+            <li style="margin-top: 50px">
                 <a href="{{url('/')}}"> Map <i class="fa fa-map" aria-hidden="true" style="margin-left:150px"></i></a>
             </li>
             <li>
