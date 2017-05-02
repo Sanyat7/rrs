@@ -15,17 +15,17 @@
                             {{$error}}
                         @endforeach
                     </div>
-                    <form class="form-horizontal" action="{{route('postCreateVehicle')}}" role="form">
+                    <form class="form-horizontal" action="{{route('postCreateVehicle')}}" role="form" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="startPoint">Start Point:</label>
+                            <label class="control-label col-sm-2" for="startPoint">vehicleName:</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="startPoint" placeholder="Enter Start Point">
+                                <input type="text" class="form-control" name="vehicleName" placeholder="Enter vehicleName">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Save the freaking thing</button>
+                                <button type="submit" class="btn btn-default">Save</button>
                             </div>
                         </div>
                     </form>

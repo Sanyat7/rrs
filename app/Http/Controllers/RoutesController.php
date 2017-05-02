@@ -8,6 +8,11 @@ use App\Http\Requests;
 
 class RoutesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('routes');
@@ -17,8 +22,8 @@ class RoutesController extends Controller
         return view('routesCreate');
     }
 
-    public function store(Requests\addRoute $request){
-        ThisRoute::create($request->all());
-        return redirect()->route('createRoute');
+    public function store(Request $request){
+        thisRoute::create($request->all());
+        return redirect()->route('routePage');
     }
 }

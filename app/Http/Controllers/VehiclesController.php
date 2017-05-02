@@ -8,6 +8,12 @@ use App\Http\Requests;
 
 class VehiclesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('vehicles');
@@ -17,8 +23,8 @@ class VehiclesController extends Controller
         return view('vehiclesCreate');
     }
 
-    public function store(Requests\addVehicle $request){
+    public function store(Request $request){
         Vehicle::create($request->all());
-        return redirect()->route('createVehicle');
+        return redirect()->route('vehiclePage');
     }
 }
