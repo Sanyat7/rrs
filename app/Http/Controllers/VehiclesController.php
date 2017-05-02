@@ -16,7 +16,8 @@ class VehiclesController extends Controller
 
     public function index()
     {
-        return view('vehicles');
+        $vehicles = Vehicle::all();
+        return view('vehicles', ['vehicles' => $vehicles]);
     }
 
     public function create(){
@@ -25,6 +26,23 @@ class VehiclesController extends Controller
 
     public function store(Request $request){
         Vehicle::create($request->all());
+        return redirect()->route('vehiclePage');
+    }
+
+    function deleteVehicle($id) {
+        $vehicle = Vehicle::find($id);
+        $vehicle->delete();
+        return redirect()->route('vehiclePage');
+    }
+
+    function viewEditVehicle( $id ) {
+        $vehicle = Vehicle::find($id);
+        return view('editVehicle', ['vehicle' => $vehicle]);
+    }
+
+    function postUpdateVehicle( Request $request, $id ) {
+        $vehicle = Vehicle::find($id);
+        $vehicle->update( $request->all());
         return redirect()->route('vehiclePage');
     }
 }

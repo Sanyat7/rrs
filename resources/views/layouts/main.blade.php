@@ -22,23 +22,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">RRS</a>
+            <a class="navbar-brand" href="{{url('/')}}">RRS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Map <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">About</a></li>
-                @if (Auth:: user())
-                <li><a href="#">History</a></li>
-                @endif
+                <li><a href="{{url('/')}}">Map <span class="sr-only">(current)</span></a></li>
+                <li><a href="{{route('aboutPage')}}">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
+                    <li><a href="{{ url('/register') }}">Register a New User</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -67,28 +64,25 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
-                    <h2>Logo</h2>
+                <a href="{{url('/')}}">
+                    <h2><img src="{{asset('assets/images/logo.png')}}" width="190px" height="130px"></h2>
                 </a>
                 <hr width="70%" align="left" style="margin-left: 20px; border: 1px solid white">
             </li>
-            <li style="margin-top: 50px">
+            <li style="margin-top: 100px">
                 <a href="{{url('/')}}"> Map <i class="fa fa-map" aria-hidden="true" style="margin-left:150px"></i></a>
             </li>
             <li>
-                <a href="#"> About <i class="fa fa-info" aria-hidden="true" style="margin-left:150px"></i></a>
+                <a href="{{route('aboutPage')}}"> About <i class="fa fa-info" aria-hidden="true" style="margin-left:150px"></i></a>
             </li>
-            @if (Auth:: user())
+            @if(Auth::user())
             <li>
-                <a href="#"> Search History <i class="fa fa-file-text" aria-hidden="true" style="margin-left:80px"></i></a>
+                <a href="{{route('vehiclePage')}}"> Vehicles <i class="fa fa-bus" aria-hidden="true" style="margin-left:129px"></i></a>
+            </li>
+            <li>
+                <a href="{{route('routePage')}}"> Routes <i class="fa fa-road" aria-hidden="true" style="margin-left:130px"></i></a>
             </li>
             @endif
-            <li>
-                <a href="{{route('vehiclePage')}}"> Vehicles <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
-            </li>
-            <li>
-                <a href="{{route('routePage')}}"> Routes <i class="fa fa-phone" aria-hidden="true" style="margin-left:129px"></i></a>
-            </li>
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -99,12 +93,6 @@
     </div>
     <div id="page-content-wrapper" style="margin-left: 20px">
         <div style="margin-top: 50px"></div>
-        @if (Auth:: guest())
-        <div class="alert alert-info alert-dismissable" style="margin-right: 20px; margin-top: 50px">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Info!</strong> <a href="{{ url('/login') }}" class="alert-link">LogIn</a> to Save your Search History.
-        </div>
-        @endif
         <div class="container-fluid" style="margin-top: -50px">
             @yield('content')
         </div>

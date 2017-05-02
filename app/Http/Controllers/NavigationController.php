@@ -15,10 +15,4 @@ class NavigationController extends Controller
         return view('about');
     }
 
-    public function terms(){
-        return view('terms');
-
-    }public function contact(){
-        return view('contact');
-    }
 }

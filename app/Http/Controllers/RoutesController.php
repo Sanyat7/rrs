@@ -15,7 +15,8 @@ class RoutesController extends Controller
 
     public function index()
     {
-        return view('routes');
+        $thisRoutes = thisRoute::all();
+        return view('routes', ['thisRoutes' => $thisRoutes]);
     }
 
     public function create(){
@@ -24,6 +25,13 @@ class RoutesController extends Controller
 
     public function store(Request $request){
         thisRoute::create($request->all());
+        return redirect()->route('routePage');
+    }
+
+    function deleteRoute($id) {
+
+        $thisRoute = thisRoute::find($id);
+        $thisRoute->delete();
         return redirect()->route('routePage');
     }
 }

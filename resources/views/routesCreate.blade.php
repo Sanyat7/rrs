@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div style="width:98%; height: 500px; margin-top:40px; background: white">
+        <div style="width:98%; height: 592px; margin-top:40px; background: white">
             <div class="row" style="margin-left: 30px">
                 <div class="row">
                     <h2>Routes</h2><br />

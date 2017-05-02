@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div style="width:98%; height: 500px; margin-top:40px; background: white">
+        <div style="width:98%; height: 592px; margin-top:40px; background: white">
             <div class="row" style="margin-left: 30px">
                 <div class="row">
                     <h2>Vehicles</h2><br />
@@ -18,7 +18,7 @@
                     <form class="form-horizontal" action="{{route('postCreateVehicle')}}" role="form" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="startPoint">vehicleName:</label>
+                            <label class="control-label col-sm-2" for="startPoint">Vehicle Name:</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="vehicleName" placeholder="Enter vehicleName">
                             </div>
